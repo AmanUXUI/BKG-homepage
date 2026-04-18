@@ -64,7 +64,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-black/5">
       {/* Institution Switcher */}
-      <div className="bg-black py-2.5 px-8 flex justify-end gap-6 rounded-t-2xl">
+      <div className="bg-black py-2.5 px-4 md:px-8 flex justify-center md:justify-end gap-4 md:gap-6 rounded-t-2xl">
           <button 
             onClick={() => setInstitution('school')}
             className={`text-[9px] font-display font-semibold uppercase tracking-widest italic transition-all ${
@@ -275,12 +275,12 @@ const Hero = () => {
       </div>
 
       {/* Large Bottom Marquee */}
-      <div className="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-r from-[#ff0000] to-[#fdcf58] py-8 overflow-hidden pointer-events-none border-t border-white/10">
+      <div className="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-r from-[#ff0000] to-[#fdcf58] py-6 md:py-8 overflow-hidden pointer-events-none border-t border-white/10">
         <div className="animate-marquee whitespace-nowrap flex items-center">
-          <span className="text-[60px] md:text-[80px] font-black text-white uppercase leading-none px-12 select-none italic tracking-tighter">
+          <span className="text-[40px] md:text-[80px] font-black text-white uppercase leading-none px-6 md:px-12 select-none italic tracking-tighter">
             {marqueeText}
           </span>
-          <span className="text-[60px] md:text-[80px] font-black text-white uppercase leading-none px-12 select-none italic tracking-tighter">
+          <span className="text-[40px] md:text-[80px] font-black text-white uppercase leading-none px-6 md:px-12 select-none italic tracking-tighter">
             {marqueeText}
           </span>
         </div>
@@ -348,7 +348,7 @@ const WelcomeSection = () => {
                 We nurture our students to become global citizens with tolerance, respect, and appreciation for different cultures and religions and to become self-motivated, independent, confident, decision-making leaders of tomorrow.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               <div className="p-6 bg-white rounded-2xl shadow-sm border border-black/5">
                 <div className="w-10 h-10 bg-gradient-to-r from-[#ff0000] to-[#fdcf58] rounded-xl flex items-center justify-center text-white mb-4">
                   <BookOpen size={20} />
@@ -473,7 +473,7 @@ const SmileSection = () => {
         </div>
 
         {/* 3D Interactive Letters */}
-        <div className="flex justify-center items-center gap-4 md:gap-8 mb-16">
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-8 mb-16">
           {smileData.map((item, idx) => (
             <motion.div
               key={item.letter}
@@ -483,7 +483,7 @@ const SmileSection = () => {
               whileTap={{ scale: 0.95 }}
             >
               <div
-                className={`w-16 h-16 md:w-24 md:h-24 flex items-center justify-center rounded-2xl text-3xl md:text-5xl font-display font-bold transition-all duration-500 shadow-2xl relative preserve-3d
+                className={`w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 flex items-center justify-center rounded-2xl text-2xl sm:text-3xl md:text-5xl font-display font-bold transition-all duration-500 shadow-2xl relative preserve-3d
                 ${activeLetter === idx 
                   ? 'bg-gradient-to-r from-[#ff0000] to-[#fdcf58] text-white' 
                   : 'bg-bg-main text-primary/40'}`}
@@ -686,28 +686,28 @@ const EventsSection = () => {
   return (
     <section className="py-24 bg-bg-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
           <div>
             <div className="inline-block px-4 py-1.5 bg-primary/5 rounded-full text-primary font-display font-semibold text-[9px] uppercase tracking-widest mb-6 italic">
               BLOG & INSIGHTS
             </div>
             <h3 className="text-2xl md:text-3xl font-display font-semibold text-primary italic tracking-tighter">
-              News about our BKG <br /> Global School
+              News about our BKG <br className="hidden md:block" /> Global School
             </h3>
           </div>
-          <button className="bg-primary text-white px-6 py-3 rounded-full font-display font-semibold text-[9px] flex items-center gap-2 hover:scale-105 transition-all italic uppercase tracking-widest">
+          <button className="bg-primary text-white px-6 py-3 rounded-full font-display font-semibold text-[9px] flex text-nowrap items-center gap-2 hover:scale-105 transition-all italic uppercase tracking-widest">
             MORE BLOGS <ChevronRight size={14} />
           </button>
         </div>
 
         <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-black/5">
           {news.map((item, idx) => (
-            <div key={idx} className={`flex items-center justify-between p-8 hover:bg-bg-main transition-colors cursor-pointer group ${idx !== news.length - 1 ? 'border-b border-black/5' : ''}`}>
-              <div className="flex items-center gap-12">
+            <div key={idx} className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 md:p-8 gap-4 sm:gap-0 hover:bg-bg-main transition-colors cursor-pointer group ${idx !== news.length - 1 ? 'border-b border-black/5' : ''}`}>
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-12">
                 <span className="text-[9px] font-display font-semibold text-text-muted uppercase tracking-widest italic">{item.date}</span>
-                <h4 className="text-lg font-display font-semibold text-primary italic group-hover:bg-gradient-to-r group-hover:from-[#ff0000] group-hover:to-[#fdcf58] group-hover:bg-clip-text group-hover:text-transparent transition-all">{item.title}</h4>
+                <h4 className="text-base md:text-lg font-display font-semibold text-primary italic group-hover:bg-gradient-to-r group-hover:from-[#ff0000] group-hover:to-[#fdcf58] group-hover:bg-clip-text group-hover:text-transparent transition-all pr-4 sm:pr-0">{item.title}</h4>
               </div>
-              <div className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="w-10 h-10 rounded-full border border-black/10 flex flex-shrink-0 items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all self-end sm:self-auto">
                 <Plus size={20} />
               </div>
             </div>
@@ -768,7 +768,7 @@ const Footer = () => {
               zIndex: 50,
               transition: { type: 'spring', stiffness: 300, damping: 20 }
             }}
-            className="relative flex-shrink-0 w-24 md:w-36 lg:w-48 aspect-[3/4] bg-white p-1.5 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer"
+            className="relative flex-shrink-0 w-16 sm:w-24 md:w-36 lg:w-48 aspect-[3/4] bg-white p-1 sm:p-1.5 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer"
           >
             <img 
               src={img.src} 
@@ -869,8 +869,8 @@ const Footer = () => {
           </div>
 
           {/* Bottom Section: Copyright & Socials */}
-          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-[9px] font-bold uppercase tracking-widest italic">
-            <p>COPYRIGHT © 2026 - DESIGNED AND DEVELOPED BY <span className="text-white">TEAM MEDIAGARH</span></p>
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-[9px] font-bold uppercase tracking-widest italic text-center md:text-left">
+            <p>COPYRIGHT © 2026 - DESIGNED AND DEVELOPED BY <br className="block sm:hidden" /><span className="text-white">TEAM MEDIAGARH</span></p>
             <div className="flex gap-6">
               <a href="#" className="text-white hover:text-accent transition-colors"><Facebook size={18} /></a>
               <a href="#" className="text-white hover:text-accent transition-colors"><Instagram size={18} /></a>
