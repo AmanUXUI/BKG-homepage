@@ -1,0 +1,54 @@
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600&f[]=outfit@400,500,600,700,800,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Switzer", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #000000;
+  --color-accent: #fdcf58;
+  --color-bg-main: #FFFFFF;
+  --color-bg-alt: #F9F9F9;
+  --color-text-main: #000000;
+  --color-text-muted: #555555;
+  
+  --background-image-gradient-primary: linear-gradient(135deg, #000000 0%, #333333 100%);
+  --background-image-gradient-accent: linear-gradient(135deg, #000000 0%, #222222 100%);
+  --background-image-gradient-soft: linear-gradient(180deg, #FFFFFF 0%, #F9F9F9 100%);
+  --color-dark: #000000;
+}
+
+@layer base {
+  body {
+    @apply font-sans font-light text-text-main bg-bg-main leading-relaxed;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold tracking-tight text-primary;
+  }
+
+  em, i {
+    @apply italic font-medium;
+  }
+}
+
+@layer utilities {
+  .gradient-text-fix {
+    @apply bg-clip-text text-transparent inline-block;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-right: 0.2em;
+    padding-bottom: 0.1em;
+    margin-right: -0.2em;
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
