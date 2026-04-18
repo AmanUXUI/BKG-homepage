@@ -235,7 +235,7 @@ const Hero = () => {
   const marqueeText = "WHERE GLOBAL EDUCATION SHAPES FUTURE LEADERS • ADMISSION OPEN 2026-27 • CLICK HERE FOR REGISTRATION • WORLD-CLASS LEARNING • ";
 
   return (
-    <section className="relative h-[115vh] min-h-[850px] flex items-center overflow-hidden bg-gradient-to-b from-black via-black to-zinc-900">
+    <section className="relative h-[85vh] min-h-[500px] lg:h-[115vh] lg:min-h-[850px] flex items-center overflow-hidden bg-gradient-to-b from-black via-black to-zinc-900">
       {/* Video Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <iframe
