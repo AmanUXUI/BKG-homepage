@@ -961,7 +961,7 @@ const ChairmanSection = () => {
             </div>
             <div className="flex items-center gap-4">
               <div className="w-12 h-1 bg-primary"></div>
-              <p className="font-display font-semibold text-primary uppercase tracking-widest text-[13px]">Mr. B.K. Gujjar, Chairman</p>
+              <p className="font-display font-semibold text-primary uppercase tracking-widest text-[13px]">Shri B. Rudra Gouda, Chairman</p>
             </div>
           </div>
           <div className="relative">
