@@ -233,7 +233,7 @@ const Hero = () => {
   const marqueeText = "WHERE GLOBAL EDUCATION SHAPES FUTURE LEADERS • ADMISSION OPEN 2026-27 • CLICK HERE FOR REGISTRATION • WORLD-CLASS LEARNING • ";
 
   return (
-    <section className="relative h-[85vh] min-h-[500px] lg:h-[115vh] lg:min-h-[850px] flex items-center overflow-hidden bg-gradient-to-b from-black via-black to-zinc-900">
+    <section className="relative h-[85vh] min-h-[500px] lg:h-[105vh] lg:min-h-[750px] flex items-center overflow-hidden bg-gradient-to-b from-black via-black to-zinc-900">
       {/* Video Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <iframe
@@ -253,7 +253,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-display font-semibold text-white leading-[1] tracking-tighter mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-semibold text-white leading-[1] tracking-tighter mb-4">
               Where Global Education <br />
               <span className="italic font-medium bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix">Shapes Future Leaders</span>
             </h1>
@@ -299,17 +299,17 @@ const StatsBar = () => {
     <section className="pt-12 pb-6 bg-bg-main border-b border-black/5">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-12">
-          <div className="flex justify-center items-center gap-6 md:gap-12 w-full lg:w-auto">
-            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
-              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[0].value}</span>
-              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
+          <div className="flex justify-center items-center gap-4 sm:gap-6 md:gap-12 w-full lg:w-auto">
+            <div className="flex flex-col gap-1 items-center text-center flex-1 lg:flex-none">
+              <span className="text-2xl sm:text-3xl font-black text-primary italic tracking-tighter">{stats[0].value}</span>
+              <p className="text-[9px] sm:text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[140px] sm:max-w-[180px]">
                 {stats[0].label}
               </p>
             </div>
-            <div className="w-px h-16 bg-black/10"></div>
-            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
-              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[1].value}</span>
-              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
+            <div className="w-px h-12 sm:h-16 bg-black/10"></div>
+            <div className="flex flex-col gap-1 items-center text-center flex-1 lg:flex-none">
+              <span className="text-2xl sm:text-3xl font-black text-primary italic tracking-tighter">{stats[1].value}</span>
+              <p className="text-[9px] sm:text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[140px] sm:max-w-[180px]">
                 {stats[1].label}
               </p>
             </div>
@@ -317,17 +317,17 @@ const StatsBar = () => {
 
           <div className="w-px h-16 bg-black/10 hidden lg:block"></div>
 
-          <div className="flex justify-center items-center gap-6 md:gap-12 w-full lg:w-auto">
-            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
-              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[2].value}</span>
-              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
+          <div className="flex justify-center items-center gap-4 sm:gap-6 md:gap-12 w-full lg:w-auto">
+            <div className="flex flex-col gap-1 items-center text-center flex-1 lg:flex-none">
+              <span className="text-2xl sm:text-3xl font-black text-primary italic tracking-tighter">{stats[2].value}</span>
+              <p className="text-[9px] sm:text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[140px] sm:max-w-[180px]">
                 {stats[2].label}
               </p>
             </div>
-            <div className="w-px h-16 bg-black/10"></div>
-            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
-              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[3].value}</span>
-              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
+            <div className="w-px h-12 sm:h-16 bg-black/10"></div>
+            <div className="flex flex-col gap-1 items-center text-center flex-1 lg:flex-none">
+              <span className="text-2xl sm:text-3xl font-black text-primary italic tracking-tighter">{stats[3].value}</span>
+              <p className="text-[9px] sm:text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[140px] sm:max-w-[180px]">
                 {stats[3].label}
               </p>
             </div>
@@ -779,7 +779,7 @@ const Footer = () => {
   return (
     <footer className="bg-white relative">
       {/* Polaroid Gallery */}
-      <div className="flex justify-center -space-x-8 md:-space-x-12 lg:-space-x-16 px-4 pt-24 pb-12 relative z-10">
+      <div className="flex justify-center -space-x-10 xs:-space-x-8 md:-space-x-12 lg:-space-x-16 px-4 pt-24 pb-12 relative z-10 overflow-x-hidden">
         {galleryImages.map((img, idx) => (
           <motion.div
             key={idx}
@@ -791,7 +791,7 @@ const Footer = () => {
               zIndex: 50,
               transition: { type: 'spring', stiffness: 300, damping: 20 }
             }}
-            className="relative flex-shrink-0 w-20 sm:w-32 md:w-44 lg:w-56 aspect-[3/4] bg-white p-1.5 sm:p-2 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer"
+            className="relative flex-shrink-0 w-16 xs:w-20 sm:w-32 md:w-44 lg:w-56 aspect-[3/4] bg-white p-1 sm:p-2 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer"
           >
             <img
               src={img.src}
