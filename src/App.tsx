@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Menu, X, ChevronDown, Phone, Mail, MapPin, Globe, 
-  Award, Calendar, Play, BookOpen, Users, Building2, 
+import {
+  Menu, X, ChevronDown, Phone, Mail, MapPin, Globe,
+  Award, Calendar, Play, BookOpen, Users, Building2,
   GraduationCap, Heart, Brain, Zap, Microscope, Smile,
   ChevronRight, Plus, Minus, Trophy, Quote, Star,
   Facebook, Instagram, Twitter, Linkedin
@@ -65,47 +65,45 @@ const Navbar = () => {
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-black/5">
       {/* Institution Switcher */}
       <div className="bg-black py-2.5 px-4 md:px-8 flex justify-center md:justify-end gap-4 md:gap-6 rounded-t-2xl">
-          <button 
-            onClick={() => setInstitution('school')}
-            className={`text-[9px] font-display font-semibold uppercase tracking-widest italic transition-all ${
-              institution === 'school' 
-                ? 'bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix' 
-                : 'text-white hover:text-white/80'
+        <button
+          onClick={() => setInstitution('school')}
+          className={`text-[9px] font-display font-semibold uppercase tracking-widest italic transition-all ${institution === 'school'
+            ? 'bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix'
+            : 'text-white hover:text-white/80'
             }`}
-          >
-            BKG Global School
-          </button>
-          <div className="w-px h-3 bg-white/20 self-center" />
-          <button 
-            onClick={() => setInstitution('college')}
-            className={`text-[9px] font-display font-semibold uppercase tracking-widest italic transition-all ${
-              institution === 'college' 
-                ? 'bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix' 
-                : 'text-white hover:text-white/80'
+        >
+          BKG Global School
+        </button>
+        <div className="w-px h-3 bg-white/20 self-center" />
+        <button
+          onClick={() => setInstitution('college')}
+          className={`text-[9px] font-display font-semibold uppercase tracking-widest italic transition-all ${institution === 'college'
+            ? 'bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix'
+            : 'text-white hover:text-white/80'
             }`}
-          >
-            BKG PU College
-          </button>
-        </div>
+        >
+          BKG PU College
+        </button>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
             <div className="h-16 py-2">
-              <img 
-                src="https://bkgglobalschool.com/wp-content/uploads/2022/12/Global-School-1.png" 
-                alt="BKG Logo" 
+              <img
+                src="https://bkgglobalschool.com/wp-content/uploads/2022/12/Global-School-1.png"
+                alt="BKG Logo"
                 className="h-full w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
           </div>
-          
+
           <div className="hidden lg:block">
             <div className="flex items-center space-x-6">
               {currentNav.map((item) => (
-                <div 
-                  key={item.name} 
+                <div
+                  key={item.name}
                   className="relative group"
                   onMouseEnter={() => setActiveDropdown(item.name)}
                   onMouseLeave={() => setActiveDropdown(null)}
@@ -120,15 +118,15 @@ const Navbar = () => {
 
                   {/* Standard Dropdown */}
                   {item.items && activeDropdown === item.name && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="absolute top-full left-0 w-64 bg-white shadow-2xl border border-black/5 rounded-2xl overflow-hidden py-4"
                     >
                       {item.items.map((subItem) => (
-                        <a 
-                          key={subItem} 
-                          href="#" 
+                        <a
+                          key={subItem}
+                          href="#"
                           className="block px-6 py-3 text-[11px] font-bold text-text-main hover:bg-bg-main hover:text-primary italic transition-colors"
                         >
                           {subItem}
@@ -139,7 +137,7 @@ const Navbar = () => {
 
                   {/* Mega Menu for College Academics */}
                   {item.mega && activeDropdown === item.name && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="absolute top-full -right-48 w-[800px] bg-white shadow-2xl border border-black/5 rounded-2xl overflow-hidden p-10 grid grid-cols-2 gap-10"
@@ -149,9 +147,9 @@ const Navbar = () => {
                           <h4 className="text-[10px] font-display font-semibold text-accent uppercase tracking-widest mb-4 italic">{section.title}</h4>
                           <div className="space-y-2">
                             {section.items.map((subItem) => (
-                              <a 
-                                key={subItem} 
-                                href="#" 
+                              <a
+                                key={subItem}
+                                href="#"
                                 className="block text-[13px] font-bold text-text-main hover:text-primary italic transition-colors"
                               >
                                 {subItem}
@@ -192,7 +190,7 @@ const Navbar = () => {
             <div className="px-4 pt-4 pb-8 space-y-2">
               {currentNav.map((item) => (
                 <div key={item.name} className="border-b border-black/5 last:border-0">
-                  <button 
+                  <button
                     onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
                     className="w-full flex justify-between items-center py-4 text-base font-bold text-text-main italic"
                   >
@@ -201,7 +199,7 @@ const Navbar = () => {
                   </button>
                   <AnimatePresence>
                     {activeDropdown === item.name && (
-                      <motion.div 
+                      <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -255,18 +253,18 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-display font-semibold text-white leading-[1] tracking-tighter mb-8">
+            <h1 className="text-4xl md:text-6xl font-display font-semibold text-white leading-[1] tracking-tighter mb-4">
               Where Global Education <br />
               <span className="italic font-medium bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix">Shapes Future Leaders</span>
             </h1>
-            <p className="text-base text-white/90 leading-relaxed max-w-md italic font-light mb-10">
+            <p className="text-base text-white/90 leading-relaxed max-w-md italic font-light mb-6">
               Empowering young minds with world-class learning, innovation, and values to thrive in a global future.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <button className="bg-white text-black px-8 py-4 rounded-full font-black text-[11px] flex items-center gap-3 hover:scale-105 transition-all shadow-2xl italic tracking-widest">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <button className="w-full sm:w-auto bg-white text-black px-8 py-4 rounded-full font-black text-[11px] flex items-center justify-center gap-3 hover:scale-105 transition-all shadow-2xl italic tracking-widest">
                 REGISTER NOW
               </button>
-              <button className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-black text-[11px] flex items-center gap-3 hover:bg-white hover:text-black hover:border-white transition-all italic tracking-widest">
+              <button className="w-full sm:w-auto border-2 border-white/30 text-white px-8 py-4 rounded-full font-black text-[11px] flex items-center justify-center gap-3 hover:bg-white hover:text-black hover:border-white transition-all italic tracking-widest">
                 ADMISSION OPEN 2026–27
               </button>
             </div>
@@ -298,17 +296,42 @@ const StatsBar = () => {
   ];
 
   return (
-    <section className="py-12 bg-bg-main border-b border-black/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col gap-2">
-              <span className="text-3xl font-black text-primary italic tracking-tighter">{stat.value}</span>
+    <section className="pt-12 pb-6 bg-bg-main border-b border-black/5">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-12">
+          <div className="flex justify-center items-center gap-6 md:gap-12 w-full lg:w-auto">
+            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
+              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[0].value}</span>
               <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
-                {stat.label}
+                {stats[0].label}
               </p>
             </div>
-          ))}
+            <div className="w-px h-16 bg-black/10"></div>
+            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
+              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[1].value}</span>
+              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
+                {stats[1].label}
+              </p>
+            </div>
+          </div>
+
+          <div className="w-px h-16 bg-black/10 hidden lg:block"></div>
+
+          <div className="flex justify-center items-center gap-6 md:gap-12 w-full lg:w-auto">
+            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
+              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[2].value}</span>
+              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
+                {stats[2].label}
+              </p>
+            </div>
+            <div className="w-px h-16 bg-black/10"></div>
+            <div className="flex flex-col gap-2 items-center text-center flex-1 lg:flex-none">
+              <span className="text-3xl font-black text-primary italic tracking-tighter">{stats[3].value}</span>
+              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-tight italic max-w-[180px]">
+                {stats[3].label}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -317,14 +340,14 @@ const StatsBar = () => {
 
 const WelcomeSection = () => {
   return (
-    <section className="py-24 bg-bg-main overflow-hidden">
+    <section className="pt-12 pb-24 bg-bg-main overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] relative group">
-              <img 
-                src="https://i.postimg.cc/TwJG7KfQ/BG.jpg" 
-                alt="BKG Global School Academy" 
+              <img
+                src="https://i.postimg.cc/TwJG7KfQ/BG.jpg"
+                alt="BKG Global School Academy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -484,15 +507,15 @@ const SmileSection = () => {
             >
               <div
                 className={`w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 flex items-center justify-center rounded-2xl text-2xl sm:text-3xl md:text-5xl font-display font-bold transition-all duration-500 shadow-2xl relative preserve-3d
-                ${activeLetter === idx 
-                  ? 'bg-gradient-to-r from-[#ff0000] to-[#fdcf58] text-white' 
-                  : 'bg-bg-main text-primary/40'}`}
+                ${activeLetter === idx
+                    ? 'bg-gradient-to-r from-[#ff0000] to-[#fdcf58] text-white'
+                    : 'bg-bg-main text-primary/40'}`}
               >
                 {/* 3D Sides for the letter block */}
                 <div className={`absolute inset-0 rounded-2xl bg-black/5 -translate-z-4 blur-sm group-hover:blur-md transition-all`}></div>
                 <span className="relative z-20 drop-shadow-md">{item.letter}</span>
               </div>
-              
+
               {activeLetter === idx && (
                 <motion.div
                   layoutId="active-indicator"
@@ -517,7 +540,7 @@ const SmileSection = () => {
             >
               {/* Card Decoration */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-primary/10 transition-colors"></div>
-              
+
               <div className="flex flex-col md:flex-row gap-12 items-start relative z-10">
                 <div className="space-y-4 md:w-2/5">
                   <div className="text-[10px] font-display font-semibold text-accent uppercase tracking-[0.2em] italic">
@@ -589,9 +612,9 @@ const FAQSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-square">
-            <img 
-              src="https://i.postimg.cc/158qVS9W/asdfasdfasdfasdfasdf.webp" 
-              alt="BKG Campus FAQ Section" 
+            <img
+              src="https://i.postimg.cc/158qVS9W/asdfasdfasdfasdfasdf.webp"
+              alt="BKG Campus FAQ Section"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -655,7 +678,7 @@ const AchievementsSection = () => {
           <h2 className="text-white font-display font-semibold tracking-[0.2em] uppercase text-[9px] mb-4 italic drop-shadow-sm">Excellence</h2>
           <h3 className="text-2xl md:text-3xl font-display font-black text-white tracking-tighter italic drop-shadow-md">OUR ACHIEVEMENTS AND AWARDS</h3>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {awards.map((award, idx) => (
             <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/20 p-10 rounded-2xl text-center group hover:bg-white/20 transition-all shadow-xl">
@@ -743,36 +766,36 @@ const VideoSection = () => {
 
 const Footer = () => {
   const galleryImages = [
-    { src: 'https://picsum.photos/seed/bkg-life1/400/600', rotate: -6 },
-    { src: 'https://picsum.photos/seed/bkg-life2/400/600', rotate: 4 },
-    { src: 'https://picsum.photos/seed/bkg-life3/400/600', rotate: -3 },
-    { src: 'https://picsum.photos/seed/bkg-life4/400/600', rotate: 7 },
-    { src: 'https://picsum.photos/seed/bkg-life5/400/600', rotate: -5 },
-    { src: 'https://picsum.photos/seed/bkg-life6/400/600', rotate: 3 },
-    { src: 'https://picsum.photos/seed/bkg-life7/400/600', rotate: -4 },
-    { src: 'https://picsum.photos/seed/bkg-life8/400/600', rotate: 5 },
+    { src: 'https://i.postimg.cc/RhmYXyGY/MAHATHVA.jpg', rotate: -6 },
+    { src: 'https://i.postimg.cc/hPpY1CmM/DSC-4105.jpg', rotate: 4 },
+    { src: 'https://i.postimg.cc/CLLP5j2R/DSC-4071.jpg', rotate: -3 },
+    { src: 'https://i.postimg.cc/HW3zqrkN/DSC04367.jpg', rotate: 7 },
+    { src: 'https://i.postimg.cc/j5xNchP7/SPP-3143.jpg', rotate: -5 },
+    { src: 'https://i.postimg.cc/TwNy9vTV/DSC-6514.jpg', rotate: 3 },
+    { src: 'https://i.postimg.cc/MGWvJpHx/SCHOOL-2.jpg', rotate: -4 },
+    { src: 'https://i.postimg.cc/y6wh40zf/DSC-6570.jpg', rotate: 5 },
   ];
 
   return (
     <footer className="bg-white relative">
       {/* Polaroid Gallery */}
-      <div className="flex justify-center -space-x-4 md:-space-x-6 lg:-space-x-8 px-4 pt-8 relative z-10">
+      <div className="flex justify-center -space-x-8 md:-space-x-12 lg:-space-x-16 px-4 pt-24 pb-12 relative z-10">
         {galleryImages.map((img, idx) => (
           <motion.div
             key={idx}
             initial={{ rotate: img.rotate }}
-            whileHover={{ 
-              rotate: 0, 
-              y: -40, 
-              scale: 1.2,
+            whileHover={{
+              rotate: 0,
+              y: -80,
+              scale: 1.1,
               zIndex: 50,
               transition: { type: 'spring', stiffness: 300, damping: 20 }
             }}
-            className="relative flex-shrink-0 w-16 sm:w-24 md:w-36 lg:w-48 aspect-[3/4] bg-white p-1 sm:p-1.5 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer"
+            className="relative flex-shrink-0 w-20 sm:w-32 md:w-44 lg:w-56 aspect-[3/4] bg-white p-1.5 sm:p-2 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer"
           >
-            <img 
-              src={img.src} 
-              alt={`Campus Life ${idx}`} 
+            <img
+              src={img.src}
+              alt={`Campus Life ${idx}`}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -835,9 +858,9 @@ const Footer = () => {
 
             <div className="relative z-10">
               <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] border-4 border-white/10">
-                <img 
-                  src="https://i.postimg.cc/158qVS9W/asdfasdfasdfasdfasdf.webp" 
-                  alt="BKG Campus Aerial View" 
+                <img
+                  src="https://i.postimg.cc/158qVS9W/asdfasdfasdfasdfasdf.webp"
+                  alt="BKG Campus Aerial View"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -848,18 +871,18 @@ const Footer = () => {
           {/* Middle Section: Horizontal Nav */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16 border-t border-white/10 pt-16">
             <div className="flex-shrink-0">
-              <img 
-                src="https://bkgglobalschool.com/wp-content/uploads/2022/12/Global-School-1.png" 
-                alt="BKG Logo" 
+              <img
+                src="https://bkgglobalschool.com/wp-content/uploads/2022/12/Global-School-1.png"
+                alt="BKG Logo"
                 className="h-16 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-all"
                 referrerPolicy="no-referrer"
               />
             </div>
             <div className="flex flex-wrap gap-8 md:gap-12 justify-center">
               {['ABOUT', 'FAQ', 'CLASS', 'CONTACT'].map((item) => (
-                <a 
-                  key={item} 
-                  href="#" 
+                <a
+                  key={item}
+                  href="#"
                   className="text-xs font-display font-semibold text-white hover:text-accent transition-colors tracking-[0.2em] italic"
                 >
                   {item}
@@ -892,11 +915,15 @@ const TestimonialsSection = () => {
           <h2 className="bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix font-display font-semibold tracking-[0.2em] uppercase text-[9px] mb-4 italic">Voices</h2>
           <h3 className="text-xl font-display font-semibold text-primary">TESTIMONIALS</h3>
         </div>
-        
+
         <div className="flex flex-wrap justify-center gap-8">
-          {[1, 2, 3].map((i) => (
-            <motion.div 
-              key={i}
+          {[
+            { name: "Rajesh Kumar", role: "Parent of Grade 5 Student", image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&h=400&auto=format&fit=crop" },
+            { name: "Sunita Sharma", role: "Parent of Grade 3 Student", image: "https://plus.unsplash.com/premium_photo-1682089810582-f7b200217b67?q=80&w=400&h=400&auto=format&fit=crop" },
+            { name: "Amit Patel", role: "Parent of Grade 8 Student", image: "https://images.unsplash.com/photo-1607081692251-d689f1b9af84?q=80&w=400&h=400&auto=format&fit=crop" }
+          ].map((parent, idx) => (
+            <motion.div
+              key={idx}
               whileHover={{ y: -8 }}
               className="bg-white p-8 rounded-2xl shadow-sm border border-black/5 max-w-sm relative group"
             >
@@ -910,10 +937,15 @@ const TestimonialsSection = () => {
                 "BKG Global School has provided my child with an exceptional learning environment. The focus on holistic development and values is truly commendable."
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-dark" />
+                <img
+                  src={parent.image}
+                  alt={parent.name}
+                  className="w-10 h-10 rounded-full object-cover border border-black/5"
+                  referrerPolicy="no-referrer"
+                />
                 <div>
-                  <h4 className="font-display font-semibold text-primary text-[13px] italic">Parent Name {i}</h4>
-                  <p className="text-[9px] text-text-muted font-display font-semibold uppercase tracking-wider opacity-70">Parent of Grade {i+2} Student</p>
+                  <h4 className="font-display font-semibold text-primary text-[13px] italic">{parent.name}</h4>
+                  <p className="text-[9px] text-text-muted font-display font-semibold uppercase tracking-wider opacity-70">{parent.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -966,9 +998,9 @@ const ChairmanSection = () => {
           </div>
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] relative z-10">
-              <img 
-                src="https://i.postimg.cc/02kSkS4C/asdfasdf.webp" 
-                alt="Chairman" 
+              <img
+                src="https://i.postimg.cc/02kSkS4C/asdfasdf.webp"
+                alt="Chairman"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
