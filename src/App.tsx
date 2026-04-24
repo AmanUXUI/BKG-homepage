@@ -340,7 +340,7 @@ const StatsBar = () => {
 
 const WelcomeSection = () => {
   return (
-    <section className="pt-12 pb-24 bg-bg-main overflow-hidden">
+    <section className="pt-8 pb-16 md:pb-20 bg-bg-main overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
@@ -478,7 +478,7 @@ const SmileSection = () => {
   ];
 
   return (
-    <section className="pt-24 pb-12 bg-white relative overflow-hidden">
+    <section className="pt-12 pb-10 md:pt-20 md:pb-12 bg-white relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-5 overflow-hidden">
         <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary rounded-full blur-[120px]"></div>
@@ -608,7 +608,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-square">
@@ -671,7 +671,7 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-r from-[#ff0000] to-[#fdcf58]">
+    <section className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-r from-[#ff0000] to-[#fdcf58]">
       <div className="absolute inset-0 bg-black/10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -707,7 +707,7 @@ const EventsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-bg-alt">
+    <section className="py-12 md:py-20 bg-bg-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
           <div>
@@ -743,7 +743,7 @@ const EventsSection = () => {
 
 const VideoSection = () => {
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-black relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <img src="https://picsum.photos/seed/campus/1920/1080" alt="Campus" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
       </div>
@@ -779,7 +779,7 @@ const Footer = () => {
   return (
     <footer className="bg-white relative">
       {/* Polaroid Gallery */}
-      <div className="flex justify-center -space-x-10 xs:-space-x-8 md:-space-x-12 lg:-space-x-16 px-4 pt-24 pb-12 relative z-10 overflow-x-hidden">
+      <div className="hidden sm:flex justify-center -space-x-8 md:-space-x-12 lg:-space-x-16 px-4 pt-24 pb-12 relative z-10">
         {galleryImages.map((img, idx) => (
           <motion.div
             key={idx}
@@ -791,7 +791,14 @@ const Footer = () => {
               zIndex: 50,
               transition: { type: 'spring', stiffness: 300, damping: 20 }
             }}
-            className="relative flex-shrink-0 w-16 xs:w-20 sm:w-32 md:w-44 lg:w-56 aspect-[3/4] bg-white p-1 sm:p-2 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer"
+            whileTap={{
+              rotate: 0,
+              y: -80,
+              scale: 1.1,
+              zIndex: 50,
+              transition: { type: 'spring', stiffness: 300, damping: 20 }
+            }}
+            className={`relative flex-shrink-0 w-[32vw] sm:w-32 md:w-44 lg:w-56 aspect-[3/4] bg-white p-2 sm:p-2 md:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5 cursor-pointer ${idx >= 4 ? 'hidden sm:block' : ''}`}
           >
             <img
               src={img.src}
@@ -803,7 +810,7 @@ const Footer = () => {
         ))}
       </div>
 
-      <div className="bg-gradient-to-b from-black to-zinc-950 pt-32 pb-12 relative z-20 -mt-24 md:-mt-32 lg:-mt-40 overflow-hidden">
+      <div className="bg-gradient-to-b from-black to-zinc-950 pt-16 sm:pt-32 pb-12 relative z-20 mt-0 sm:-mt-24 md:-mt-32 lg:-mt-40 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Section: Quote & Image */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24 relative">
@@ -909,7 +916,7 @@ const Footer = () => {
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 bg-bg-main overflow-hidden">
+    <section className="py-12 md:py-16 bg-bg-main overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="bg-gradient-to-r from-[#ff0000] to-[#fdcf58] gradient-text-fix font-display font-semibold tracking-[0.2em] uppercase text-[9px] mb-4 italic">Voices</h2>
@@ -973,7 +980,7 @@ const AssociatesSection = () => {
 
 const ChairmanSection = () => {
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-12 md:py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
